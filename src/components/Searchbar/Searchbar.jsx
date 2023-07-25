@@ -1,0 +1,58 @@
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import css from './Searchbar.module.css';
+
+export class Searchbar extends Component {
+  state = {
+    searchName: '',
+  };
+
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  };
+
+
+  handleInputChange = e => {
+    const value = e.currentTarget.value;
+    this.setState({ searchName: value });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const searchName = this.state.searchName;
+    if (searchName.trim() === '') {
+    return alert('пусто');;
+    } 
+
+    this.props.onSubmit({
+      searchName: searchName.toLowerCase(),
+    });
+    this.resetState();
+  };
+
+  resetState = () => {
+    this.setState({ searchName: '' });
+  };
+
+  render() {
+    return (
+      <header className={css.searchbar}>
+        <form className={css.form} onSubmit={this.handleSubmit}>
+          <button type="submit" className={css.button}>
+            <span>Search</span>
+          </button>
+
+          <input
+            className={css.input}
+            type="text"
+            autoComplete="off"
+            autoFocus
+            placeholder="Search images and photos"
+            value={this.state.searchName}
+            onChange={this.handleInputChange}
+          />
+        </form>
+      </header>
+    );
+  }
+}
