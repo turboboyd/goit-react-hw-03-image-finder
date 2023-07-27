@@ -112,7 +112,7 @@ export class ImageGallery extends Component {
             <Button onClick={this.handleLoadMore}>Load more</Button>
           )}
 
-          {showModal && ( // Вставьте компонент Modal, если showModal true
+          {showModal && (
             <Modal imageUrl={selectedImageUrl} onClose={this.closeModal} />
           )}
         </>
