@@ -1,41 +1,75 @@
-/* searchbar.module.css */
-.searchbar {
+.Searchbar {
+  top: 0;
+  left: 0;
+  position: sticky;
+  z-index: 1100;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
-  background-color: #f1f1f1;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 64px;
+  padding-right: 24px;
+  padding-left: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: #fff;
+  background-color: #3f51b5;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
-.form {
+.SearchForm {
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 3px;
+  overflow: hidden;
 }
 
-.input {
-  padding: 10px;
-  border: none;
-  border-radius: 4px 0 0 4px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+.SearchForm_button {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  /* background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg'); */
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-}
-
-.button:hover {
-  background-color: #0056b3;
-}
-
-.input:focus {
   outline: none;
-  border: 1px solid #007bff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.SearchForm_button:hover {
+  opacity: 1;
+}
+
+.SearchForm_button-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.SearchForm_input {
+  display: inline-block;
+  width: 100%;
+  font: inherit;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.SearchForm_input::placeholder {
+  font: inherit;
+  font-size: 18px;
 }

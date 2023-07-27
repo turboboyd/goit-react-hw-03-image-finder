@@ -1,26 +1,22 @@
 import PropTypes from 'prop-types';
-import css from './ImageGalleryItem.module.css'
 
+import css from './ImageGalleryItem.module.css';
 
-
-export const ImageGalleryItem = ({ imagesAnswer }) => {
-  console.log('imagesAnswer: ', imagesAnswer);
+export function ImageGalleryItem({ src, alt, onClick }) {
   return (
-    <ul className={css.ImageGallery}>
-      {imagesAnswer &&
-        imagesAnswer.map(
-          ({ id, largeImageURL, previewHeight, previewWidth, tags }) => (
-            <li className={css.ImageGalleryItem} key={id}>
-              <img
-                width={previewWidth}
-                height={previewHeight}
-                src={largeImageURL}
-                alt={tags}
-              />
-            </li>
-          )
-        )}
-    </ul>
+    <li className={css.galleryItem}>
+      <img
+        className={css.ImageGalleryItem_image}
+        src={src}
+        alt={alt}
+        onClick={onClick}
+      />
+    </li>
   );
-};
+}
 
+ImageGalleryItem.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired, 
+};
