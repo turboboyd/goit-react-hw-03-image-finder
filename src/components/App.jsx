@@ -5,8 +5,6 @@ import css from './App.module.css'
 import { ToastContainer } from 'react-toastify';
 
 
-
-
 export class App extends Component {
   state = {
     searchName: '',
