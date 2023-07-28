@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-
 import css from './ImageGalleryItem.module.css';
 
 export function ImageGalleryItem({ src, alt, onClick }) {

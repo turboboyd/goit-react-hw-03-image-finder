@@ -29,27 +29,3 @@ MagnifyingGlass.propTypes = {
   color: PropTypes.string.isRequired,
   glassColor: PropTypes.string.isRequired,
 };
-
-// fetchImages = (name, page, key) => {
-//   this.setState({ loading: true });
-
-//   fetch(
-//     `https://pixabay.com/api/?q=${name}&page=${page}&key=${key}&image_type=photo&orientation=horizontal&per_page=12`
-//   )
-//     .then(res => {
-//       if (res.ok) {
-//         return res.json();
-//       }
-//       return Promise.reject(new Error('Пусто 2'));
-//     })
-//     .then(data => {
-//       this.setState({
-//         imagesSearch: data.hits, // Append new images to the existing imagesSearch
-//         status: 'resolved',
-//         loading: false,
-//       });
-//     })
-//     .catch(error =>
-//       this.setState({ error, status: 'rejected', loading: false })
-//     );
-// };

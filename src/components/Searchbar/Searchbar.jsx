@@ -14,6 +14,7 @@ export class Searchbar extends Component {
 
   handleInputChange = e => {
     const value = e.currentTarget.value;
+
     this.setState({ searchName: value });
   };
 
