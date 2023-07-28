@@ -16,3 +16,4 @@ export const fetchImages = (name, page) => {
       throw new Error('An error has occurred, please try again!');
     });
 };
+
