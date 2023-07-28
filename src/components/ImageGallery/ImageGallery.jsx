@@ -9,13 +9,13 @@ import Modal from '../Modal/Modal';
 export class ImageGallery extends Component {
   state = {
     searchName: '',
-    images: [], // Initialize images as an empty array
+    images: [],
     page: 1,
     loading: false,
     error: null,
     status: 'idle',
     showButton: false,
-    showModal: false, // Добавьте поле showModal для отслеживания состояния модального окна
+    showModal: false, 
     selectedImageUrl: '',
   };
 
