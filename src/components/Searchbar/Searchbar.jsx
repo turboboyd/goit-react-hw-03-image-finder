@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { earchEmpty } from '../Notifix/Notifix';
 import PropTypes from 'prop-types';
 import css from './Searchbar.module.css';
 
@@ -22,7 +23,7 @@ export class Searchbar extends Component {
     e.preventDefault();
     const searchName = this.state.searchName;
     if (searchName.trim() === '') {
-    return alert('пусто');;
+    return earchEmpty();
     } 
 
     this.props.onSubmit({
@@ -40,7 +41,7 @@ export class Searchbar extends Component {
       <header className={css.Searchbar}>
         <form className={css.SearchForm} onSubmit={this.handleSubmit}>
           <button type="submit" className={css.SearchForm_button}>
-            <span>Search</span>
+            
           </button>
 
           <input

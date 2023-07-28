@@ -27,6 +27,19 @@ export const noImagesFound = name =>
   });
 
 
+export const earchEmpty = () =>
+  toast.warn(`Write something in the search!`, {
+    position: 'top-right',
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: 'light',
+  });
+
+
 export const errorToastify = () =>
   toast.error(' An error has occurred, please try again!', {
     position: 'top-right',
